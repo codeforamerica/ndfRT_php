@@ -1,7 +1,7 @@
 <?php
 // SOAP/REST ... implementing REST with SOAP style method selection. 
 // Extremely similar to the rxNorm_php api library.
-class ndfRT extends APIBaseClass{
+class ndfRTApi extends APIBaseClass{
 // would like to some day implement this in SOAP...
 
 	public static $api_url = 'http://rxnav.nlm.nih.gov/REST/Ndfrt';
