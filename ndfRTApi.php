@@ -11,80 +11,78 @@ class ndfRTApi extends APIBaseClass{
 		parent::new_request(($url?$url:self::$api_url));
 	}
 	public function getAllInfo( $nui ){
-	// is 'name' search type?
-		return self::_request(self::$api_url."/allInfo/nui=$nui");
-	
+		return self::_request("/allInfo/$nui",'GET');	
 	}
 	
 	public function getAssociationList( ){
-		return self::_request(self::$api_url.'/associationList');
+		return self::_request('/associationList','GET');
 	}
 	
 	public function getRelatedConceptsByAssociation( $nui, $associationName ){
-		return self::_request(self::$api_url."/associations/nui=$nui&associationName=$associationName");
+		return self::_request("/associations/nui=$nui&associationName=$associationName",'GET');
 	}
 
 	public function getChildConcepts( $nui, $transitive ){
-		return self::_request(self::$api_url."/childConcepts/nui=$nui&transitive=$transitive");
+		return self::_request("/childConcepts/nui=$nui&transitive=$transitive",'GET');
 	}	
 	
 	public function findConceptsByName($conceptName,$kindName){
-		return self::_request(self::$api_url."/conceptName=$conceptName&kindName=$kindName");;
+		return self::_request("/conceptName=$conceptName&kindName=$kindName",'GET');
 	}		
 	
 	public function getEPCClassofConcept($nui){
-		return self::_request(self::$api_url."/EPCC/$nui");
+		return self::_request("/EPCC/$nui",'GET');
 	}
 
 	public function findConceptsByID($idType,$idString){
-		return self::_request(self::$api_url."/idtype=$idType&idString=$idString");
+		return self::_request("/idType=$idType&idString=$idString",'GET');
 	}		
 
 	public function findDrugInteractions( $nui, $scope ){
-		return self::_request(self::$api_url."/interaction/nui=$nui&scope=$scope");
+		return self::_request("/interaction/nui=$nui&scope=$scope",'GET');
 	}
 
 	public function interactions( $nui,$nui2, $scope ){
-		return self::_request(self::$api_url."/interaction/nui1=$nui&nui2=$nui2&scope=$scope");
+		return self::_request("/interaction/nui1=$nui&nui2=$nui2&scope=$scope",'GET');
 	}
 	
 	public function getKindList( ){
-		return self::_request(self::$api_url.'/kindList');
+		return self::_request('/kindList','GET');
 	}
 
 	public function getRelatedConceptsByRole( $nui, $roleName,$transitive ){
-		return self::_request(self::$api_url."/interaction/nui=$nui&roleName=$scope&transitive=$transitive");
+		return self::_request("/nui=$nui&roleName=$roleName&transitive=$transitive",'GET');
 	}
 	
 	public function getParentConcepts( $nui, $transitive ){
-		return self::_request(self::$api_url."/parentConcepts/nui=$nui&transitive=$transitive");
+		return self::_request("/parentConcepts/nui=$nui&transitive=$transitive",'GET');
 	}		
 	
 	public function getPropertyList( ){
-		return self::_request(self::$api_url.'/propertyList');
+		return self::_request('/propertyList','GET');
 	}
 	
 	public function getConceptsByProperty( $propName, $propertyValue ){
-		return self::_request(self::$api_url."/propertyName=$propName&propertyValue=$propertyValue");
+		return self::_request("/propertyName=$propName&propertyValue=$propertyValue",'GET');
 	}
 	
 	public function getRelatedConceptsByReverseRole( $nui, $roleName,$transitive ){
-		return self::_request(self::$api_url."/reverse/nui=$nui&roleName=$scope&transitive=$transitive");
+		return self::_request("/reverse/nui=$nui&roleName=$roleName&transitive=$transitive",'GET',$data);
 	}	
 		
 	public function getRoleList( ){
-		return self::_request(self::$api_url.'/roleList');
+		return self::_request('/roleList','GET');
 	}	
 	
 	public function getTypeList( ){
-		return self::_request(self::$api_url.'/typeList');
+		return self::_request('/typeList','GET');
 	}
 	
 	public function getVAClassOfConcept($nui){
-		return self::_request(self::$api_url."/VA/$nui");
+		return self::_request("/VA/$nui",'GET');
 	}
 	
 	public function getVersion(){
-		return self::_request(self::$api_url."/version");
+		return self::_request("/version",'GET');
 	}
 }
