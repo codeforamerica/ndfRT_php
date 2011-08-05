@@ -67,7 +67,7 @@ class ndfRTApi extends APIBaseClass{
 	}
 	
 	public function getRelatedConceptsByReverseRole( $nui, $roleName,$transitive ){
-		return self::_request("/reverse/nui=$nui&roleName=$roleName&transitive=$transitive",'GET',$data);
+		return self::_request("/reverse/nui=$nui&roleName=$roleName&transitive=$transitive",'GET');
 	}	
 		
 	public function getRoleList( ){
